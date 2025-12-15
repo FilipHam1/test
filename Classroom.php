@@ -11,7 +11,7 @@ class Classroom
     {
         $this->label = $label;
         $this->capacity = $capacity;
-        $this->students = []; // výchozí hodnota
+        $this->students = []; 
     }
 
     // metoda navíc – naplnění pole objektů
