@@ -1,4 +1,8 @@
 <?php
+public function getName(): string
+{
+    return $this->name;
+}
 
 class Person
 {
@@ -21,3 +25,4 @@ class Person
         return "{$this->name}, {$this->age} let";
     }
 }
+
