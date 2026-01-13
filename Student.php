@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 require_once "Database.php";
 
 class Student
@@ -76,5 +77,23 @@ class Student
         $stmt->execute([":id" => $this->id]);
 
         $this->id = null;
+=======
+require_once "Person.php";
+
+class Student extends Person
+{
+    public int $year;
+
+    public function __construct(string $name, int $age, int $year)
+    {
+        parent::__construct($name, $age); 
+        $this->year = $year;
+    }
+
+    public function introduce(): void
+    {
+        parent::introduce();
+        echo "Chodím do {$this->year}. ročníku.<br>";
+>>>>>>> 970eb635745120dcc057aedab335c4a7084facad
     }
 }
