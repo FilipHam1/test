@@ -1,23 +1,19 @@
 <?php
+require_once "Person.php";
 
-require_once "Student.php";
-require_once "Classroom.php";
+class Student extends Person
+{
+    public int $year;
 
+    public function __construct(string $name, int $age, int $year)
+    {
+        parent::__construct($name, $age); 
+        $this->year = $year;
+    }
 
-$classroom = new Classroom("3.A", 2);
-
-
-$student1 = new Student("Tomáš", 17, 3);
-$student2 = new Student("Lucie", 16, 3);
-$student3 = new Student("Martin", 17, 3);
-
-
-$classroom->enroll($student1);
-$classroom->enroll($student2);
-$classroom->enroll($student3); 
-
-echo "<hr>";
-
-
-$student1->introduce();
-$student2->introduce();
+    public function introduce(): void
+    {
+        parent::introduce();
+        echo "Chodím do {$this->year}. ročníku.<br>";
+    }
+}
